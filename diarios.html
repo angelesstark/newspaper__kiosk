@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        html{
+            background-image: url(bcDiarios.avif);
+        }
+        div{
+        margin-top:7% ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom:0%;
+        }
+        button{
+            font-size: 20px;
+            background-color:white; 
+            border-color: white;
+            width: 70px;
+            height: 40px;
+            color: rgb(110, 87, 71);
+        }
+        .btn{
+            margin: 0 auto;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    
+    <div><iframe src="https://www.ultimahora.com/" width="700" height="400" allowfullscreen id="iframe"></iframe></div>
+    <div id="btn">
+    <button onclick="myFunctionant()" id="izquierda" >🢀</button> 
+    <button onclick="myFunctionpost()" id="derecha" >🢂</button> <br>
+    </div>
+
+    <script>
+        let pos = 0; 
+        function myFunctionant() {
+    const izquierda = document.getElementById("izquierda");
+    const iframe=document.getElementById("iframe");
+    const lista = ["https://www.ultimahora.com/","https://www.abc.com.py/","https://www.lanacion.com.py/","https://www.hoy.com.py/"];
+    
+        pos=pos-1;
+        if(pos<0){
+            pos=lista.length-1;
+            iframe.src=lista[pos];
+        }
+        else{
+        iframe.src=lista[pos];
+        }  
+    }
+function myFunctionpost() {
+     const derecha = document.getElementById("derecha");
+     const iframe=document.getElementById("iframe");
+     const lista = ["https://www.ultimahora.com/","https://www.abc.com.py/","https://www.lanacion.com.py/","https://www.hoy.com.py/"];
+   
+        pos=pos+1;
+        if(pos>lista.length-1){
+        pos=0;
+        iframe.src=lista[pos];
+}
+        else{
+        iframe.src=lista[pos];
+        }
+    
+}
+
+    </script>
+
+</body>
+</html>
